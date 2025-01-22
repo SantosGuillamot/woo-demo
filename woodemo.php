@@ -11,3 +11,10 @@
  * Text Domain:       woo-demo
  * Requires Plugins:  woocommerce
  */
+function extend_query_loop_for_product_post_type( $query ) {
+	if ( ! is_admin() && $query->is_main_query() ) {
+		// Always set the post type to 'product'
+		$query->set( 'post_type', 'product' );
+	}
+}
+add_action( 'pre_get_posts', 'extend_query_loop_for_product_post_type' );
