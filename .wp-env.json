@@ -1,0 +1,11 @@
+{
+	"plugins": [
+		"https://downloads.wordpress.org/plugin/woocommerce.latest-stable.zip",
+		"."
+	],
+	"config": {
+		"PERMALINK_STRUCTURE": "/%postname%/",
+		"POSTS_PER_PAGE": 8,
+		"POSTS_PER_RSS": 8
+	}
+}
