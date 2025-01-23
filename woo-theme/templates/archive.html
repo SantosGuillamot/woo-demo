@@ -2,12 +2,12 @@
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group">
-	<!-- wp:query {"queryId":0,"query":{"perPage":10,"pages":0,"offset":0,"postType":"product","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true,"parents":[],"format":[]}} -->
+	<!-- wp:query {"queryId":0,"query":{"perPage":6,"pages":0,"offset":0,"postType":"product","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true,"parents":[],"format":[]}} -->
 	<div class="wp-block-query">
 		<!-- wp:post-template {"layout":{"type":"grid","columnCount":3}} -->
-		<!-- wp:woocommerce/product-image {"isDescendentOfQueryLoop":true} /-->
+		<!-- wp:post-featured-image {"isLink":true} /-->
 
-		<!-- wp:post-title /-->
+		<!-- wp:post-title {"isLink":true} /-->
 		<!-- /wp:post-template -->
 
 		<!-- wp:query-pagination -->
@@ -19,8 +19,8 @@
 		<!-- /wp:query-pagination -->
 
 		<!-- wp:query-no-results -->
-		<!-- wp:paragraph {"placeholder":"Add text or blocks that will display when a query returns no results."} -->
-		<p></p>
+		<!-- wp:paragraph {"placeholder":"Add text or blocks that will display when a query returns no results.","fontSize":"large"} -->
+		<p class="has-large-font-size"></p>
 		<!-- /wp:paragraph -->
 		<!-- /wp:query-no-results -->
 	</div>
