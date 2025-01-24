@@ -18,3 +18,17 @@ function extend_query_loop_for_product_post_type( $query ) {
 	}
 }
 add_action( 'pre_get_posts', 'extend_query_loop_for_product_post_type' );
+
+/**
+ * Auto register all blocks found in the `build/blocks` folder.
+ */
+function auto_register_block_types() {
+	if ( file_exists( __DIR__ . '/build/blocks/' ) ) {
+		$block_json_files = glob( __DIR__ . '/build/blocks/*/block.json' );
+		foreach ( $block_json_files as $filename ) {
+			$block_folder = dirname( $filename );
+			register_block_type( $block_folder );
+		};
+	};
+}
+add_action( 'init', 'auto_register_block_types' );
