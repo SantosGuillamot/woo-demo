@@ -23,9 +23,29 @@
 					"name": "Black"
 				},
 				{
-					"slug": "woo-purple",
-					"color": "#7F54B3",
-					"name": "Woo Purple"
+					"slug": "woo-purple-10",
+					"color": "#D1C1FF",
+					"name": "Woo Purple 10"
+				},
+				{
+					"slug": "woo-purple-40",
+					"color": "#873EFF",
+					"name": "Woo Purple 40"
+				},
+				{
+					"slug": "woo-purple-50",
+					"color": "#720EEC",
+					"name": "Woo Purple 50"
+				},
+				{
+					"slug": "woo-purple-70",
+					"color": "#5007AA",
+					"name": "Woo Purple 70"
+				},
+				{
+					"slug": "woo-purple-90",
+					"color": "#2C045D",
+					"name": "Woo Purple 90"
 				}
 			]
 		},
