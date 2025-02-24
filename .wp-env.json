@@ -1,11 +1,10 @@
 {
 	"plugins": [
 		"https://downloads.wordpress.org/plugin/woocommerce.latest-stable.zip",
-		"."
+		"./woo-demo-plugin"
 	],
-	"config": {
-		"PERMALINK_STRUCTURE": "/%postname%/",
-		"POSTS_PER_PAGE": 8,
-		"POSTS_PER_RSS": 8
+	"themes": [ "./woo-demo-theme" ],
+	"lifecycleScripts": {
+		"afterStart": "wp-env run cli wp theme activate woo-demo-theme"
 	}
 }
