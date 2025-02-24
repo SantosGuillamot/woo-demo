@@ -4,8 +4,8 @@
 	"author": "Automattic",
 	"license": "GPL-3.0-or-later",
 	"scripts": {
-		"build": "wp-scripts build --experimental-modules",
-		"start": "wp-scripts start --experimental-modules",
+		"build": "wp-scripts build --webpack-src-dir=woo-demo-plugin --output-path=woo-demo-plugin/build --experimental-modules",
+		"start": "wp-scripts start --webpack-src-dir=woo-demo-plugin --output-path=woo-demo-plugin/build --experimental-modules",
 		"dev": "npm start",
 		"format:php": "wp-env run --env-cwd='wp-content/plugins/woo-demo' cli composer run-script format",
 		"lint:php": "wp-env run --env-cwd='wp-content/plugins/woo-demo' cli composer run-script lint",
