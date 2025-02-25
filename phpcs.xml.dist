@@ -26,14 +26,13 @@
 	</rule>
 
 	<rule ref="Squiz.Commenting.FileComment.Missing">
-		<exclude-pattern>./woodemo.php</exclude-pattern>
+		<exclude-pattern>./woo-demo-plugin/woodemo.php</exclude-pattern>
 	</rule>
 
 	<arg value="ps"/>
 	<arg name="extensions" value="php"/>
 
-	<file>./woodemo.php</file>
-	<file>./src</file>
+	<file>./woo-demo-plugin</file>
 
 	<!-- Exclude generated files -->
 	<exclude-pattern>./build</exclude-pattern>
