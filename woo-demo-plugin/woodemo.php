@@ -38,6 +38,7 @@ function woodemo_add_directives_to_product_search( $block_content, $block ) {
 	}
 	$p = new WP_HTML_Tag_Processor( $block_content );
 	if ( $p->next_tag( 'form' ) ) {
+		$p->set_attribute( 'data-wp-interactive', 'woocommerce/product-collection' );
 		$form_context = array(
 			'queryId' => 'filter_search',
 		);
