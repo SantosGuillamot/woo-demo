@@ -38,20 +38,21 @@ function woodemo_add_directives_to_product_search( $block_content, $block ) {
 	}
 	$p = new WP_HTML_Tag_Processor( $block_content );
 	if ( $p->next_tag( 'form' ) ) {
+		$form_context = array(
+			'queryId' => 'filter_search',
+		);
+		if ( isset( $_GET['filter_search'] ) ) {
+			$form_context['queryTerm'] = sanitize_text_field( $_GET['filter_search'] );
+		}
+		$p->set_attribute( 'data-wp-context', json_encode( $form_context ) );
+		$p->set_attribute( 'data-wp-bind--data-wc-query-id', 'context.queryId' );
+		$p->set_attribute( 'data-wp-bind--data-wc-query-term', 'context.queryTerm' );
 		$p->set_attribute( 'data-wp-on--submit', 'actions.updateQuery' );
 	}
 	if ( $p->next_tag( 'input' ) && 'search' === $p->get_attribute( 'type' ) ) {
 		// TODO: Add server state based on the URL.
-		if ( isset( $_GET['filter_search'] ) ) {
-			wp_interactivity_state(
-				'woocommerce/product-collection',
-				array(
-					'searchTerm' => $_GET['filter_search'],
-				)
-			);
-		}
 
-		$p->set_attribute( 'data-wp-bind--value', 'state.searchTerm' );
+		$p->set_attribute( 'data-wp-bind--value', 'context.queryTerm' );
 		$p->set_attribute( 'data-wp-on--input', 'actions.updateSearch' );
 		$assets = include plugin_dir_path( __FILE__ ) . 'build/index.asset.php';
 		wp_enqueue_script_module(
