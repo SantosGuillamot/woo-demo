@@ -17,7 +17,7 @@
 	<!-- wp:woocommerce/product-filter-clear-button -->
 	<!-- wp:buttons {"style":{"spacing":{"margin":{"top":"var:preset|spacing|10"}}},"layout":{"type":"flex","verticalAlignment":"stretched"}} -->
 	<div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--10)"><!-- wp:button {"textAlign":"center","width":100,"className":"wc-block-product-filter-clear-button is-style-outline","style":{"border":{"width":"1px"},"typography":{"textDecoration":"none"},"outline":"none","fontSize":"medium","spacing":{"padding":{"left":"8px","right":"8px","top":"5px","bottom":"5px"}}}} -->
-	<div class="wp-block-button has-custom-width wp-block-button__width-100 wc-block-product-filter-clear-button is-style-outline" style="text-decoration:none"><a class="wp-block-button__link has-text-align-center wp-element-button" style="border-width:1px;padding-top:5px;padding-right:8px;padding-bottom:5px;padding-left:8px">Clear filters</a></div>
+	<div class="wp-block-button has-custom-width wp-block-button__width-100 wc-block-product-filter-clear-button is-style-outline"><a class="wp-block-button__link has-text-align-center wp-element-button" style="border-width:1px;padding-top:5px;padding-right:8px;padding-bottom:5px;padding-left:8px;text-decoration:none">Clear filters</a></div>
 	<!-- /wp:button --></div>
 	<!-- /wp:buttons -->
 	<!-- /wp:woocommerce/product-filter-clear-button --></div>
@@ -37,17 +37,7 @@
 	<!-- /wp:woocommerce/product-filter-price-slider --></div>
 	<!-- /wp:woocommerce/product-filter-price -->
 	
-	<!-- wp:woocommerce/product-filter-attribute {"attributeId":2} -->
-	<div class="wp-block-woocommerce-product-filter-attribute"><!-- wp:group {"metadata":{"name":"Header"},"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-	<div class="wp-block-group"><!-- wp:heading {"level":4} -->
-	<h4 class="wp-block-heading">Categories</h4>
-	<!-- /wp:heading --></div>
-	<!-- /wp:group -->
-	
-	<!-- wp:woocommerce/product-filter-checkbox-list -->
-	<div class="wp-block-woocommerce-product-filter-checkbox-list wc-block-product-filter-checkbox-list"></div>
-	<!-- /wp:woocommerce/product-filter-checkbox-list --></div>
-	<!-- /wp:woocommerce/product-filter-attribute -->
+	<!-- wp:categories {"taxonomy":"product_cat"} /-->
 	
 	<!-- wp:woocommerce/product-filter-attribute -->
 	<div class="wp-block-woocommerce-product-filter-attribute"><!-- wp:group {"metadata":{"name":"Header"},"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
@@ -110,30 +100,24 @@
 	<!-- wp:group {"layout":{"type":"flex","orientation":"vertical","justifyContent":"center","flexWrap":"wrap"}} -->
 	<div class="wp-block-group"><!-- wp:paragraph {"fontSize":"medium"} -->
 	<p class="has-medium-font-size">
-								<strong>No results found</strong>
-							</p>
+									<strong>No results found</strong>
+								</p>
 	<!-- /wp:paragraph -->
 	
 	<!-- wp:paragraph -->
 	<p>
-								You can try
-								<a class="wc-link-clear-any-filters" href="#">clearing any filters</a>
-								or head to our
-								<a class="wc-link-stores-home" href="#">store's home</a>
-							</p>
+									You can try
+									<a class="wc-link-clear-any-filters" href="#">clearing any filters</a>
+									or head to our
+									<a class="wc-link-stores-home" href="#">store's home</a>
+								</p>
 	<!-- /wp:paragraph --></div>
 	<!-- /wp:group -->
 	<!-- /wp:woocommerce/product-collection-no-results --></div>
 	<!-- /wp:column -->
 	
 	<!-- wp:column {"width":"20%"} -->
-	<div class="wp-block-column" style="flex-basis:20%"><!-- wp:heading {"level":3} -->
-	<h3 class="wp-block-heading">Sort by</h3>
-	<!-- /wp:heading -->
-	
-	<!-- wp:paragraph -->
-	<p>Here should go the "Sorting by" block</p>
-	<!-- /wp:paragraph --></div>
+	<div class="wp-block-column" style="flex-basis:20%"><!-- wp:woocommerce/catalog-sorting /--></div>
 	<!-- /wp:column --></div>
 	<!-- /wp:columns --></div>
 	<!-- /wp:woocommerce/product-collection --></main>
