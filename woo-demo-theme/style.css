@@ -14,3 +14,15 @@ Template:
 Text Domain: woo-demo-theme
 Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, rtl-language-support, theme-options, threaded-comments, translation-ready, wide-blocks
 */
+
+.wp-block-categories-list,
+.wp-block-catalog-sorting {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	a {
+		text-decoration: none;
+		color: var(--wp--preset--color--woo-purple-40);
+		padding-left: 20px;
+	}
+}

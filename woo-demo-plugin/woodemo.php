@@ -142,7 +142,7 @@ function woodemo_catalog_sorting() {
 		),
 	);
 	return '
-		<ul ' . wp_interactivity_data_wp_context( $sorting_list ) . '>
+		<ul class="wp-block-catalog-sorting" ' . wp_interactivity_data_wp_context( $sorting_list ) . '>
 			<template
 				data-wp-each--sorting="context.list"
 				data-wp-each-key="context.sorting.queryTerm"
