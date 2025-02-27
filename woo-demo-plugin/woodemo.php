@@ -11,6 +11,20 @@
  * Text Domain:       woo-demo
  * Requires Plugins:  woocommerce
  */
+/**
+ * Enqueue iAPI code needed for the demo.
+ */
+function enqueue_interactivity_api_store() {
+	$assets = include plugin_dir_path( __FILE__ ) . 'build/index.asset.php';
+	wp_enqueue_script_module(
+		'woocommerce-interactive-product-search',
+		// TODO: Use the build file (not working right now).
+		plugin_dir_url( __FILE__ ) . 'src/index.js',
+		array( '@wordpress/interactivity', '@wordpress/interactivity-router' ),
+		$assets['version'],
+	);
+}
+add_action( 'wp_enqueue_scripts', 'enqueue_interactivity_api_store' );
 
 /**
  * (THIS WON'T BE NEEDED IF THIS IS INTEGRATED IN WOO PRODUCT SEARCH BLOCK)
@@ -56,13 +70,6 @@ function woodemo_add_directives_to_product_search( $block_content, $block ) {
 		$p->set_attribute( 'data-wp-bind--value', 'context.queryTerm' );
 		$p->set_attribute( 'data-wp-on--input', 'actions.updateSearch' );
 		$assets = include plugin_dir_path( __FILE__ ) . 'build/index.asset.php';
-		wp_enqueue_script_module(
-			'woocommerce-interactive-product-search',
-			// TODO: Use the build file (not working right now).
-			plugin_dir_url( __FILE__ ) . 'src/index.js',
-			array( '@wordpress/interactivity', '@wordpress/interactivity-router' ),
-			$assets['version'],
-		);
 	}
 	return $p->get_updated_html();
 }
@@ -214,3 +221,18 @@ function woodemo_add_categories_filtering( $block_content ) {
 	return $p->get_updated_html();
 }
 add_filter( 'render_block_core/categories', 'woodemo_add_categories_filtering', 10, 1 );
+
+/**
+ * (THIS WON'T BE NEEDED IF THIS IS INTEGRATED IN THE PRODUCT REVIEWS BLOCK)
+ *
+ * Adapt Product Reviews block to work in the client.
+ */
+function woodemo_add_csn_to_product_reviews( $block_content ) {
+	$p = new WP_HTML_Tag_Processor( $block_content );
+	if ( $p->next_tag( 'form' ) ) {
+		$p->set_attribute( 'data-wp-interactive', 'woocommerce/product-collection' );
+		$p->set_attribute( 'data-wp-on--submit', 'actions.submitReview' );
+	}
+	return $p->get_updated_html();
+}
+add_filter( 'render_block_woocommerce/product-reviews', 'woodemo_add_csn_to_product_reviews', 10, 1 );
