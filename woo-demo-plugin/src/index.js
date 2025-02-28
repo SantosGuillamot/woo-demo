@@ -18,7 +18,7 @@ store( 'woocommerce/product-collection', {
 			);
 			const url = new URL( window.location.href );
 			url.searchParams.set( queryId, queryTerm );
-			routerActions.navigate( url.href );
+			yield routerActions.navigate( url.href );
 		},
 		*submitReview( e ) {
 			e.preventDefault();
