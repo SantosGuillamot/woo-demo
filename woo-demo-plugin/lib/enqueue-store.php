@@ -3,7 +3,7 @@
  * Enqueue iAPI code needed for the demo.
  */
 function enqueue_interactivity_api_store() {
-	$assets = include plugin_dir_path( __FILE__ ) . 'build/index.asset.php';
+	$assets = include plugin_dir_path( __DIR__ ) . 'build/index.asset.php';
 	wp_enqueue_script_module(
 		'woocommerce-interactive-product-search',
 		// TODO: Use the build file (not working right now).
