@@ -7,7 +7,7 @@ function enqueue_interactivity_api_store() {
 	wp_enqueue_script_module(
 		'woocommerce-interactive-product-search',
 		// TODO: Use the build file (not working right now).
-		plugin_dir_url( __FILE__ ) . 'src/index.js',
+		plugin_dir_url( __DIR__ ) . 'src/index.js',
 		array( '@wordpress/interactivity', '@wordpress/interactivity-router' ),
 		$assets['version'],
 	);
