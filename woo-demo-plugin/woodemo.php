@@ -16,4 +16,5 @@ require_once __DIR__ . '/lib/add-catalog-sorting.php';
 require_once __DIR__ . '/lib/add-categories-filter.php';
 require_once __DIR__ . '/lib/add-csn-to-reviews.php';
 require_once __DIR__ . '/lib/add-search-filter.php';
+require_once __DIR__ . '/lib/enable-full-csn.php';
 require_once __DIR__ . '/lib/enqueue-scripts.php';
