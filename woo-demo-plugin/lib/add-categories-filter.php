@@ -14,12 +14,13 @@ function gutenberg_block_core_query_add_categories_filtering( $query, $block ) {
 	if ( ! isset( $_GET['filter_categories'] ) ) {
 		return $query;
 	}
+	$term = get_term( $_GET['filter_categories'] );
 
 	$query['tax_query'] = array(
 		array(
-			'taxonomy' => 'product_cat',
+			'taxonomy' => $term->taxonomy,
 			'field'    => 'id',
-			'terms'    => array( $_GET['filter_categories'] ),
+			'terms'    => array( $term->term_id ),
 		),
 	);
 
