@@ -27,7 +27,7 @@ Apart from that, it creates a theme consuming the different interactive experien
 ```json
 {
 	"plugins": [
-		"../gutenberg",
+		"../interactivity-api",
 		"../woocommerce/plugins/woocommerce",
 		"../woocommerce/plugins/woocommerce-beta-tester",
 		"./woo-demo-plugin"
@@ -37,7 +37,7 @@ Apart from that, it creates a theme consuming the different interactive experien
 
 Those plugins point to local repos because it needs to use different branches until some issues are solved:
 
--   Gutenberg: It needs to point to [iapi-full-csn-experimental-fix branch](https://github.com/woocommerce/gutenberg/tree/iapi-full-csn-experimental-fix), where the styles and the navigation are fixed.
+-   Automattic Interactivity API plugin: This enables the full page client-side navigation.
 -   WooCommerce: It needs to point to `trunk` where the migration of the Interactivity API has been merged.
 -   WooCommerce Beta Tester: It needs to point to `trunk`, which contains the latest changes.
 
