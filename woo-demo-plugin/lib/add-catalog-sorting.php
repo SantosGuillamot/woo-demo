@@ -48,6 +48,8 @@ function gutenberg_block_core_query_add_catalog_sorting( $query, $block ) {
 add_filter( 'query_loop_block_query_vars', 'gutenberg_block_core_query_add_catalog_sorting', 20, 2 );
 
 function woodemo_catalog_sorting() {
+	wp_enqueue_script_module( 'woocommerce-interactivity-scripts' );
+
 	$sorting_list = array(
 		'queryId' => 'sort_by',
 		'list'    => array(

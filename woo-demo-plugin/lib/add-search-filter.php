@@ -21,6 +21,8 @@ add_filter( 'query_loop_block_query_vars', 'gutenberg_block_core_query_add_url_f
 
 // Add directives to the Product Search block to filter by search terms.
 function woodemo_add_directives_to_product_search( $block_content, $block ) {
+	wp_enqueue_script_module( 'woocommerce-interactivity-scripts' );
+
 	if ( 'woocommerce/product-search' !== $block['attrs']['namespace'] ) {
 		return $block_content;
 	}

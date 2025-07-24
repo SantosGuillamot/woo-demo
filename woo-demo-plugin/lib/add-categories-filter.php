@@ -30,6 +30,8 @@ function gutenberg_block_core_query_add_categories_filtering( $query, $block ) {
 add_filter( 'query_loop_block_query_vars', 'gutenberg_block_core_query_add_categories_filtering', 20, 2 );
 
 function woodemo_add_categories_filtering( $block_content ) {
+	wp_enqueue_script_module( 'woocommerce-interactivity-scripts' );
+
 	$p = new WP_HTML_Tag_Processor( $block_content );
 	if ( $p->next_tag( 'ul' ) ) {
 		$p->set_attribute( 'data-wp-interactive', 'woocommerce/product-collection' );
